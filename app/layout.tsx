@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "@next/font/google";
+import Header from "../components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
 			<head />
-			<body className={inter.className}>{children}</body>
+			<body className={`${inter.className} scroll-smooth bg-black text-white`}>
+				<Header />
+				<main>{children}</main>
+			</body>
 		</html>
 	);
 }

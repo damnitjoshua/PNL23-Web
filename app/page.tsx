@@ -5,7 +5,6 @@ import EarthImg from "../public/images/Intersect.png";
 import HeaderLogo from "../public/images/pln-header.png";
 import MoneyLionLogo from "../public/images/MoneyLion.png";
 import MainBg from "../public/images/main-bg.png";
-import Triangle from "../components/Triangle";
 
 const inter = Inter({ subsets: ["latin"] });
 

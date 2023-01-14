@@ -33,9 +33,9 @@ export default function Home() {
 	return (
 		<main>
 			{/* hero section  */}
-			<header className="relative h-[40em] min-h-fit flex flex-row items-center justify-center md:justify-end">
+			<header className="relative h-[30em] sm:h-[40em] min-h-fit flex flex-row items-center justify-center md:justify-end">
 				<div className="absolute w-full h-full min-h-fit -z-10">
-					<Image src={HeroImg} alt={"background"} className="absolute" fill style={{ objectFit: "cover" }} />
+					<Image src={HeroImg} alt={"background"} className="absolute" fill priority style={{ objectFit: "cover" }} />
 				</div>
 				<div className="w-full md:w-[26em] mx-4 sm:mx-20">
 					<div>
@@ -64,9 +64,9 @@ export default function Home() {
 					{/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
 				</div>
 				<div className="flex flex-row items-center w-full h-full bg-black/30 py-[5em] sm:py-[10em]">
-					<div className="container p-4 mx-auto">
+					<div className="container p-4 mx-auto md:px-20">
 						<h1 className="text-2xl text-center md:text-3xl">ABOUT US</h1>
-						<p className="text-sm text-justify md:text-base pt-7 text-white/80">
+						<p className="text-xs text-justify md:text-base pt-7 text-white/80">
 							The Programming League is an annual nationwide competitive programming competition held by the Computer Society of
 							Universiti Malaya (PEKOM) starting from 2014 where teams of 3 will compete to solve algorithmic problems in the
 							given time.

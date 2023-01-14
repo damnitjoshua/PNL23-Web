@@ -1,11 +1,8 @@
 import { Inter } from "@next/font/google";
 import Image from "next/image";
-import Button from "../components/Button";
-import EarthImg from "../public/images/Intersect.png";
 import HeaderLogo from "../public/images/pln-header.png";
 import MoneyLionLogo from "../public/images/MoneyLion.png";
 import MainBg from "../public/images/about.png";
-import HeroGif from "../public/gif/hero.gif";
 import HeroImg from "../public/images/hero.png";
 
 const inter = Inter({ subsets: ["latin"] });

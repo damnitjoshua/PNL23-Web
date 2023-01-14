@@ -60,7 +60,11 @@ export default function Header() {
 					isOpen ? "flex h-screen" : "hidden"
 				} sm:hidden flex-col items-center justify-start gap-2 pt-4 container mx-auto`}>
 				{navLinks.map((item: navLinkPros, index: number) => (
-					<Link href={item.link} key={index} className="py-4 hover:underline hover:underline-offset-4">
+					<Link
+						href={item.link}
+						key={index}
+						onClick={() => setIsOpen(false)}
+						className="py-4 hover:underline hover:underline-offset-4">
 						{item.title}
 					</Link>
 				))}

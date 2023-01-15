@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Inter } from "@next/font/google";
 import Image from "next/image";
 import HeaderLogo from "../public/images/pln-header.png";

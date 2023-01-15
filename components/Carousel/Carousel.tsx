@@ -49,7 +49,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
 
   return (
     <div className="relative h-full">
-      <div className="absolute z-30 w-full">
+      <div className="absolute hidden sm:block z-30 w-full left-0">
         <button
           onClick={() => {
             if (!isTicking) {

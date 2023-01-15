@@ -13,7 +13,7 @@ const navLinks: navLinkPros[] = [
 	{ title: "Overview", link: "overview" },
 	{ title: "FAQ", link: "faq" },
 	{ title: "Results", link: "results" },
-	{ title: "Announcements", link: "announcement" },
+	{ title: "Announcements", link: "announcements" },
 	{ title: "Rules & Regulations", link: "rules" },
 ];
 
@@ -56,9 +56,8 @@ export default function Header() {
 			</div>
 
 			<div
-				className={`${
-					isOpen ? "flex h-screen" : "hidden"
-				} sm:hidden flex-col items-center justify-start gap-2 pt-4 container mx-auto`}>
+				className={`${isOpen ? "flex h-screen" : "hidden"
+					} sm:hidden flex-col items-center justify-start gap-2 pt-4 container mx-auto`}>
 				{navLinks.map((item: navLinkPros, index: number) => (
 					<Link
 						href={item.link}

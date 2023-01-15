@@ -32,7 +32,7 @@ export default function Home() {
 	}
 
 	return (
-		<main>
+		<div>
 			{/* hero section  */}
 			<header className="relative h-[30em] sm:h-[40em] min-h-fit flex flex-row items-center justify-center md:justify-end">
 				<div className="absolute w-full h-full min-h-fit -z-10">
@@ -89,6 +89,6 @@ export default function Home() {
 				<h1 className="text-2xl text-center md:text-3xl">SPONSORS</h1>
 				<div className="flex flex-col items-center gap-10 pt-10">{/* <Triangle /> */}</div>
 			</section>
-		</main>
+		</div>
 	);
 }

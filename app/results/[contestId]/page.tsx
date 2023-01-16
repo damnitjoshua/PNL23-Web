@@ -67,7 +67,7 @@ async function getData(contestId: string): Promise<CodeForcesApiResponse> {
 }
 
 export async function generateStaticParams() {
-	const ids: string[] = ["370936", "369819", "374767", "374766"];
+	const ids: string[] = ["370936", "369819", "374767"];
 
 	return ids.map((id) => ({
 		contestId: id,

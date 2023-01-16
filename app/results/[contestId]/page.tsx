@@ -18,38 +18,42 @@ interface CodeForcesApiResponse {
 			relativeTimeSeconds?: number;
 			startTimeSeconds?: number;
 		};
-		problems: [{
-			contestId?: number;
-			problemsetName?: string;
-			index: string;
-			name: string;
-			type: string;
-			points?: number;
-			rating?: number;
-			tags: string[];
-		}];
-		rows: [{
-			party: {
-				contestId: number;
-				ghost: boolean;
-				members: { handle: string; name?: string }[];
-				participantType: string;
-				startTimeSeconds?: number;
-				teamId?: number;
-				teamName?: string;
-			};
-			penalty: number;
-			points: number;
-			problemResults: {
-				points: number;
-				rejectedAttemptCount: number;
+		problems: [
+			{
+				contestId?: number;
+				problemsetName?: string;
+				index: string;
+				name: string;
 				type: string;
-				bestSubmissionTimeSeconds?: number;
-			}[];
-			rank: number;
-			successfulHackCount: number;
-			unsuccessfulHackCount: number;
-		}];
+				points?: number;
+				rating?: number;
+				tags: string[];
+			}
+		];
+		rows: [
+			{
+				party: {
+					contestId: number;
+					ghost: boolean;
+					members: { handle: string; name?: string }[];
+					participantType: string;
+					startTimeSeconds?: number;
+					teamId?: number;
+					teamName?: string;
+				};
+				penalty: number;
+				points: number;
+				problemResults: {
+					points: number;
+					rejectedAttemptCount: number;
+					type: string;
+					bestSubmissionTimeSeconds?: number;
+				}[];
+				rank: number;
+				successfulHackCount: number;
+				unsuccessfulHackCount: number;
+			}
+		];
 	};
 }
 
@@ -64,6 +68,14 @@ async function getData(contestId: string): Promise<CodeForcesApiResponse> {
 	const apiSig = crypto.createHash("sha512").update(`${randomSixDigit}/${lexQuery}#${secret}`).digest("hex");
 	const res = await fetch(`https://codeforces.com/api/${lexQuery}&apiSig=${randomSixDigit}${apiSig}`);
 	return res.json();
+}
+
+export async function generateStaticParams() {
+	const ids: string[] = ["370936", "369819", "374767", "374766"];
+
+	return ids.map((id) => ({
+		contestId: id,
+	}));
 }
 
 async function ResultsPage({ params }: { params: { contestId: string } }) {

@@ -79,8 +79,6 @@ async function ResultsPage({ params }: { params: { contestId: string } }) {
 	const problems = data.result.problems;
 	const contestants = data.result.rows;
 
-	console.log(data);
-
 	return (
 		<div className="w-full h-screen p-3 bg-black sm:p-24">
 			<Image src={ResultsBg} alt={"Results Earth Image"} className="z-10" fill style={{ objectFit: "cover" }} />

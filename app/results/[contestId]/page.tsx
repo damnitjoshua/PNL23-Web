@@ -67,7 +67,7 @@ async function getData(contestId: string): Promise<CodeForcesApiResponse> {
 }
 
 export async function generateStaticParams() {
-	const ids: string[] = ["370936", "369819", "374767"];
+	const ids: string[] = ["370936", "369819", "374767", "374766"];
 
 	return ids.map((id) => ({
 		contestId: id,
@@ -78,8 +78,6 @@ async function ResultsPage({ params }: { params: { contestId: string } }) {
 	const data = await getData(params.contestId);
 	const problems = data.result.problems;
 	const contestants = data.result.rows;
-
-	console.log(data);
 
 	return (
 		<div className="w-full h-screen p-3 bg-black sm:p-24">

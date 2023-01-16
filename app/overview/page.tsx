@@ -18,7 +18,8 @@ export default function Overview() {
 						src={OverviewImg}
 						alt={"background"}
 						className="absolute -z-20"
-						fill
+            fill
+            priority
 						style={{ objectFit: "cover", objectPosition: "left" }}
 					/>
 				</div>

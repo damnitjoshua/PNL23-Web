@@ -41,7 +41,7 @@ export default function Home() {
 				<div className="w-full md:w-[26em] mx-4 sm:mx-20">
 					<div>
 						<Image src={HeaderLogo} alt={"Earth image"} />
-						<span className="flex flex-row items-center gap-1 pt-4 text-lg font-rajdhani">
+						<span className="flex flex-row items-center gap-1 pt-4 text-sm md:text-lg font-rajdhani">
 							<svg width="1.5em" height="1.5em" viewBox="0 0 24 24">
 								<path
 									fill="currentColor"
@@ -67,7 +67,7 @@ export default function Home() {
 				<div className="flex flex-row items-center w-full h-full bg-black/30 py-[5em] sm:py-[10em]">
 					<div className="container p-4 mx-auto md:px-20">
 						<h1 className="text-2xl text-center md:text-3xl">ABOUT US</h1>
-						<p className="text-xs text-justify md:text-base pt-7 text-white/80 font-rajdhani">
+						<p className="text-sm text-justify md:text-lg pt-7 text-white/80 font-rajdhani">
 							The Programming League is an annual nationwide competitive programming competition held by the Computer Society of
 							Universiti Malaya (PEKOM) starting from 2014 where teams of 3 will compete to solve algorithmic problems in the
 							given time.

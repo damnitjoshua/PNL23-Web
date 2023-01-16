@@ -18,42 +18,38 @@ interface CodeForcesApiResponse {
 			relativeTimeSeconds?: number;
 			startTimeSeconds?: number;
 		};
-		problems: [
-			{
-				contestId?: number;
-				problemsetName?: string;
-				index: string;
-				name: string;
-				type: string;
-				points?: number;
-				rating?: number;
-				tags: string[];
-			}
-		];
-		rows: [
-			{
-				party: {
-					contestId: number;
-					ghost: boolean;
-					members: { handle: string; name?: string }[];
-					participantType: string;
-					startTimeSeconds?: number;
-					teamId?: number;
-					teamName?: string;
-				};
-				penalty: number;
+		problems: {
+			contestId?: number;
+			problemsetName?: string;
+			index: string;
+			name: string;
+			type: string;
+			points?: number;
+			rating?: number;
+			tags: string[];
+		}[];
+		rows: {
+			party: {
+				contestId: number;
+				ghost: boolean;
+				members: { handle: string; name?: string }[];
+				participantType: string;
+				startTimeSeconds?: number;
+				teamId?: number;
+				teamName?: string;
+			};
+			penalty: number;
+			points: number;
+			problemResults: {
 				points: number;
-				problemResults: {
-					points: number;
-					rejectedAttemptCount: number;
-					type: string;
-					bestSubmissionTimeSeconds?: number;
-				}[];
-				rank: number;
-				successfulHackCount: number;
-				unsuccessfulHackCount: number;
-			}
-		];
+				rejectedAttemptCount: number;
+				type: string;
+				bestSubmissionTimeSeconds?: number;
+			}[];
+			rank: number;
+			successfulHackCount: number;
+			unsuccessfulHackCount: number;
+		}[];
 	};
 }
 
@@ -82,6 +78,8 @@ async function ResultsPage({ params }: { params: { contestId: string } }) {
 	const data = await getData(params.contestId);
 	const problems = data.result.problems;
 	const contestants = data.result.rows;
+
+	console.log(data);
 
 	return (
 		<div className="w-full h-screen p-3 bg-black sm:p-24">

@@ -6,7 +6,7 @@ import { qna } from "../../data/qna";
 
 export default function Page() {
   return (
-    <div className="w-screen h-screen bg-black">
+    <div className="w-screen h-screen bg-black pt-16">
       <Image
         src={FaqBg}
         alt={"Faq Earth Image"}
@@ -14,11 +14,11 @@ export default function Page() {
         fill
         style={{ objectFit: "cover" }}
       />
-      <div className="relative z-20 overflow-hidden w-screen p-10 flex flex-col gap-36">
-        <div className="w-auto relative ml-36 overflow-hidden rounded-2xl h-60">
+      <div className="relative z-20 overflow-hidden w-screen p-10 flex flex-col gap-28">
+        <div className="w-full sm:w-auto relative sm:ml-36 overflow-x-scroll sm:overflow-hidden rounded-2xl">
           <Carousel qna={qna} />
         </div>
-        <div className=" w-auto relative overflow-hidden rounded-2xl mr-36">
+        <div className="w-full relative overflow-x-scroll sm:overflow-hidden rounded-2xl mr-36 sm:w-auto">
           <Carousel qna={qna} />
         </div>
       </div>

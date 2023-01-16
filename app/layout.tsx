@@ -70,7 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
 			< head />
-			<body className="scroll-smooth bg-black text-white font-aquire">
+			<body className="text-white bg-black scroll-smooth font-aquire">
 				<Header />
 				<main className="flex flex-col">
 					<Social />

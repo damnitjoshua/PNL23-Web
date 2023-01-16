@@ -29,11 +29,11 @@ export default function Announcements() {
             </header>
             <section className="lg:mx-[8em] mx-[3em] mt-10 flex min-h-[100vh] h-fit flex-col items-end justify-center text-right">
                 <div className="absolute left-0 top-10 w-full h-full min-h-fit -z-10">
-                    <Image src={MainBg} alt={"background"} className="absolute scale-150 md:scale-100 w-full " fill style={{ objectFit: "cover" }} />
+                    <Image src={MainBg} alt={"background"} className="absolute scale-120 md:scale-100 max-w-screen " fill style={{ objectFit: "cover" }} />
                     {/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
                 </div>
                 {announcements.map(item => (
-                    <div key={item.id} className="mb-[4em]">
+                    <div key={item.id} className="mb-[4em] mr-5">
                         <h1 className="lg:text-[35px]">{item.title}</h1>
                         <p className="font-rajdhani">
                             {item.content}

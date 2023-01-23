@@ -1,26 +1,32 @@
-interface yearProps {
+export interface resultsDataProps {
 	year: number;
+	category: {
+		title: string;
+		rounds: {
+			title: string;
+			id: number;
+		}[];
+	}[];
 }
 
-interface categoryProps {
-	title: string;
-}
-
-interface roundProps {
-	title: string;
-}
-
-export const years: yearProps[] = [
+export const resultData: resultsDataProps[] = [
 	{
 		year: 2022,
-	},
-];
-
-export const categories: categoryProps[] = [
-	{
-		title: "Open Category",
-	},
-	{
-		title: "Closed Category",
+		category: [
+			{
+				title: "Open Category",
+				rounds: [
+					{ title: "Preliminary Round", id: 369819 },
+					{ title: "Finale Round", id: 374766 },
+				],
+			},
+			{
+				title: "Closed Category",
+				rounds: [
+					{ title: "Preliminary Round", id: 370936 },
+					{ title: "Finale Round", id: 374767 },
+				],
+			},
+		],
 	},
 ];

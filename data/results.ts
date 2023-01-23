@@ -24,7 +24,7 @@ export const resultData: resultsDataProps[] = [
 				title: "Closed Category",
 				rounds: [
 					{ title: "Preliminary Round", id: 370936 },
-					
+					{ title: "Finale Round", id: 374767 },
 				],
 			},
 		],

@@ -16,13 +16,17 @@ export default function Page({ params }: { params: { yearId: string } }) {
 		<div>
 			<BottomTitleLayout props={{ title: `${yearId} Results`, bgImage: ResultsBg }}>
 				<div className="flex flex-col items-center gap-6">
-					{categories!.map((item: any, index: number) => (
-						<Link href={`/results/${yearId}/${item.title}`} className="text-sm md:text-2xl hover:underline" key={index}>
-							{">> "}
-							{item.title}
-							{" <<"}
-						</Link>
-					))}
+					{!categories ? (
+						<div></div>
+					) : (
+						categories.map((item: any, index: number) => (
+							<Link href={`/results/${yearId}/${item.title}`} className="text-sm md:text-2xl hover:underline" key={index}>
+								{">> "}
+								{item.title}
+								{" <<"}
+							</Link>
+						))
+					)}
 				</div>
 			</BottomTitleLayout>
 		</div>

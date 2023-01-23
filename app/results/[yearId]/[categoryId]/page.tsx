@@ -18,16 +18,20 @@ export default function Page({ params }: { params: { categoryId: string; yearId:
 		<div>
 			<BottomTitleLayout props={{ title: `${yearId} Results - ${categoryId.replace("%20", " ")}`, bgImage: ResultsBg }}>
 				<div className="flex flex-col items-center gap-6">
-					{rounds!.map((item: any, index: number) => (
-						<Link
-							href={`/results/${yearId}/${categoryId}/${item.id}`}
-							className="text-sm md:text-2xl hover:underline"
-							key={index}>
-							{">> "}
-							{item.title}
-							{" <<"}
-						</Link>
-					))}
+					{!rounds ? (
+						<div></div>
+					) : (
+						rounds.map((item: any, index: number) => (
+							<Link
+								href={`/results/${yearId}/${categoryId}/${item.id}`}
+								className="text-sm md:text-2xl hover:underline"
+								key={index}>
+								{">> "}
+								{item.title}
+								{" <<"}
+							</Link>
+						))
+					)}
 				</div>
 			</BottomTitleLayout>
 		</div>

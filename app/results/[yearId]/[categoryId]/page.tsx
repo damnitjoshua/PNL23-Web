@@ -4,7 +4,7 @@ import { resultData, resultsDataProps } from "../../../../data/results";
 import BottomTitleLayout from "../../../../layouts/BottomTitleLayout";
 import ResultsBg from "../../../../public/images/results-bg.svg";
 
-export function getRounds(year: string, category: string) {
+function getRounds(year: string, category: string) {
 	const categories = resultData.find((result) => result.year.toString().match(year))?.category;
 
 	return !categories ? [] : categories.find((result) => result.title.match(category))?.rounds;

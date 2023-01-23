@@ -4,7 +4,7 @@ import { resultData, resultsDataProps } from "../../../data/results";
 import BottomTitleLayout from "../../../layouts/BottomTitleLayout";
 import ResultsBg from "../../../public/images/results-bg.svg";
 
-export function getCategories(year: string) {
+function getCategories(year: string) {
 	return resultData.find((result) => result.year.toString().match(year))?.category;
 }
 

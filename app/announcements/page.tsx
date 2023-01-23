@@ -21,26 +21,29 @@ export default function Announcements() {
         }
     ];
     return (
-        <div className="font-aquire pt-[3em]">
-            <header className="fixed z-30 flex h-screen w-fit flex-col items-end justify-center self-end pl-4 pt-[10em] ">
-                <h1 className="relative left-[-4em] -rotate-90 lg:text-[50px] text-[20px]">
-                    Announcements
-                </h1>
-            </header>
-            <section className="lg:mx-[8em] mx-[3em] mt-10 flex min-h-[100vh] h-fit flex-col items-end justify-center text-right">
-                <div className="absolute left-0 top-10 w-full h-full min-h-fit -z-10">
-                    <Image src={MainBg} alt={"background"} className="absolute scale-120 md:scale-100 max-w-screen " fill style={{ objectFit: "cover" }} />
-                    {/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
-                </div>
-                {announcements.map(item => (
-                    <div key={item.id} className="mb-[4em] mr-5">
-                        <h1 className="lg:text-[35px]">{item.title}</h1>
-                        <p className="font-rajdhani">
-                            {item.content}
-                        </p>
-                    </div>
-                ))}
-            </section>
-        </div>
-    );
+			<div className="font-aquire pt-[3em]">
+				<header className="fixed z-30 flex h-screen w-fit flex-col items-end justify-center self-end pl-4 pt-[10em] ">
+					<h1 className="relative left-[-4em] -rotate-90 lg:text-[50px] text-[20px]">Announcements</h1>
+				</header>
+				<section className="lg:mx-[8em] mx-[3em] mt-10 flex min-h-[100vh] h-fit flex-col items-end justify-center text-right">
+					<div className="absolute left-0 w-full h-full top-10 min-h-fit -z-10">
+						<Image
+							src={MainBg}
+							alt={"background"}
+							className="absolute w-full scale-150 md:scale-100 "
+							fill
+							priority
+							style={{ objectFit: "cover" }}
+						/>
+						{/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
+					</div>
+					{announcements.map((item) => (
+						<div key={item.id} className="mb-[4em]">
+							<h1 className="lg:text-[35px]">{item.title}</h1>
+							<p className="font-rajdhani">{item.content}</p>
+						</div>
+					))}
+				</section>
+			</div>
+		);
 }

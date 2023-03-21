@@ -6,10 +6,12 @@ import { GraphQLClient } from "graphql-request";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 async function getRules() {
-	const hygraph: any = new GraphQLClient("https://ap-northeast-1.cdn.hygraph.com/content/clffi6gru1r7f01te7njwb2fz/master");
+  const hygraph: any = new GraphQLClient(
+    "https://ap-northeast-1.cdn.hygraph.com/content/clffi6gru1r7f01te7njwb2fz/master"
+  );
 
-	const { rules } = await hygraph.request(
-		`
+  const { rules } = await hygraph.request(
+    `
       {
         rules {
           id
@@ -22,39 +24,80 @@ async function getRules() {
         }
       }
     `
-	);
-  
-	return rules;
+  );
+
+  return rules;
 }
 
 export default async function Rules() {
-	const rules: any = await getRules();
+  const rules: any = await getRules();
 
-	return (
-		<div className="font-aquire pt-[3em]">
-			<header className="fixed z-30 flex h-screen w-fit flex-col items-end justify-center self-end pl-4 pb-[5em] ">
-				<h1 className="relative left-[-5.3em] hidden md:block -rotate-90 lg:text-[50px] text-[20px]">Rules & Regulations</h1>
-			</header>
-			<section className="lg:mx-[8em] mx-[3em] mt-10 flex min-h-[100vh] h-fit flex-col items-end justify-center">
-				<div className="absolute left-0 w-full h-full top-10 min-h-fit -z-10">
-					<Image
-						src={MainBg}
-						alt={"background"}
-						className="fixed w-full scale-120 md:scale-100 "
-						fill
-						style={{ objectFit: "cover" }}
-					/>
-					{/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
-				</div>
-				<h1 className="md:hidden block m-auto text-center text-[30px] mb-10">Rules & Regulations</h1>
-				{rules.map((item: any) => (
-					<div key={item.id} className="mb-[4em] md:ml-[5vw] mr-10 md:mr-[5vw] [&>ol]:list-decimal [&>ol]:pb-5">
-						<h1 className="lg:text-[35px]">{item.title}</h1>
-						{/* @ts-expect-error Server Component */}
-						<MDXRemote source={item.content.markdown} />
-					</div>
-				))}
-			</section>
-		</div>
-	);
+  return (
+    <div className="pt-[3em] font-aquire">
+      <header className="fixed z-30 flex h-screen w-fit flex-col items-end justify-center self-end pl-4 pb-[5em] ">
+        <h1 className="relative left-[-5.3em] hidden -rotate-90 text-[20px] md:block lg:text-[50px]">
+          Rules & Regulations
+        </h1>
+      </header>
+      <section className="mx-[3em] mt-10 flex h-fit min-h-[100vh] flex-col items-end justify-center lg:mx-[8em]">
+        <div className="absolute left-0 top-10 -z-10 h-full min-h-fit w-full">
+          <Image
+            src={MainBg}
+            alt={"background"}
+            className="scale-120 fixed w-full md:scale-100 "
+            fill
+            style={{ objectFit: "cover" }}
+          />
+          {/* <Image src={EarthImg} alt={"Earth image"} className="" fill style={{ objectFit: "cover" }} /> */}
+        </div>
+        <h1 className="m-auto mb-10 block text-center text-[30px] md:hidden">
+          Rules & Regulations
+        </h1>
+
+        <div id="accordionExample">
+          {rules.map((item: any) => (
+            <div key={item.id} className="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+              <h2 className="mb-0" id={item.title}>
+                <button
+                  className="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
+                  type="button"
+                  data-te-collapse-init
+                  data-te-target={"#" + item.id}
+                  aria-expanded={item.id === "clffimkzr5t0c0bzwi2hestq9" ? "true" : "false"}
+                  aria-controls={item.id}>
+                  {item.title}
+                  <span
+                    className="ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="h-6 w-6">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </span>
+                </button>
+              </h2>
+              <div
+                id={item.id}
+                className={"!visible font-rajdhani " + item.id === "clffimkzr5t0c0bzwi2hestq9" ? " " : "hidden"}
+                data-te-collapse-item
+                data-te-collapse-show
+                aria-labelledby={item.title}
+                data-te-parent="#accordionExample">
+                {/* @ts-expect-error Server Component */}
+                <MDXRemote source={item.content.markdown} />
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </section>
+    </div>
+  );
 }

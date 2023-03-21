@@ -1,6 +1,6 @@
 export const qna = [
   {
-    question: "Lorem Ipsum 1",
+    question: "de",
     answer: "Answer 1",
   },
   {

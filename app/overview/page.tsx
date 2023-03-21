@@ -7,7 +7,32 @@ interface contentProps {
 	paragraph: string;
 }
 
-const contents: contentProps[] = [{ title: "This is a tile", paragraph: "dede de jdidioiodhh hdeiuwhiduehw dededew dededf " }];
+const contents: contentProps[] = [
+	{
+		title: "15 March 2023",
+		paragraph: "Registration Opens",
+	},
+	{
+		title: "1st April 2023 9:00 am till 12:00 pm",
+		paragraph: "Competititve Programming Workshop 1",
+	},
+	{
+		title: "22nd April 2023 9:00 am till 12:00 pm",
+		paragraph: "Competitive Programming Workshop 2",
+	},
+	{
+		title: "1 May 2023",
+		paragraph: "Registration Closes",
+	},
+	{
+		title: "13 May 2023 8:30 am till 12:30 pm",
+		paragraph: "Premilinary Round",
+	},
+	{
+		title: "20 May 2023 8:00 am till 5:00 pm",
+		paragraph: "Final Round",
+	},
+];
 
 export default function Overview() {
 	return (

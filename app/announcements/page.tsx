@@ -6,19 +6,9 @@ export default function Announcements() {
     const announcements = [
         {
             id: 1,
-            title: "Announcement Title",
-            content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi magni non harum facilis voluptates eligendi voluptate eum necessitatibus amet corporis animi distinctio debitis dignissimos, quo, odit eveniet vitae earum expedita cumque error perspiciatis nostrum.Esse temporibus corporis laborum exercitationem dolor.",
+            title: "No Announcements Yet",
+            content: "",
         },
-        {
-            id: 2,
-            title: "Announcement Title",
-            content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi magni non harum facilis voluptates eligendi voluptate eum necessitatibus amet corporis animi distinctio debitis dignissimos, quo, odit eveniet vitae earum expedita cumque error perspiciatis nostrum.Esse temporibus corporis laborum exercitationem dolor.",
-        },
-        {
-            id: 3,
-            title: "Announcement Title",
-            content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi magni non harum facilis voluptates eligendi voluptate eum necessitatibus amet corporis animi distinctio debitis dignissimos, quo, odit eveniet vitae earum expedita cumque error perspiciatis nostrum.Esse temporibus corporis laborum exercitationem dolor.",
-        }
     ];
     return (
 			<div className="font-aquire pt-[3em]">

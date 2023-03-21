@@ -49,7 +49,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
 
   return (
     <div className="relative h-full">
-      <div className="absolute hidden sm:block z-30 w-full left-0">
+      <div className="absolute left-0 z-30 hidden w-full sm:block">
         <button
           onClick={() => {
             if (!isTicking) {
@@ -58,7 +58,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
               setIsTicking(true);
             }
           }}
-          className="flex items-center justify-center h-48 absolute bg-white w-12 opacity-10 font-bold text-center text-3xl font-mono text-gray-600 hover:opacity-25 transition-opacity"
+          className="absolute flex items-center justify-center w-12 h-48 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white opacity-10 hover:opacity-25"
         >
           &lt;
         </button>
@@ -70,7 +70,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
               setIsTicking(true);
             }
           }}
-          className="flex items-center justify-center right-0 h-48 absolute bg-white w-12 opacity-10 font-bold text-center text-3xl font-mono text-gray-600 hover:opacity-25 transition-opacity"
+          className="absolute right-0 flex items-center justify-center w-12 h-48 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white opacity-10 hover:opacity-25"
         >
           &gt;
         </button>
@@ -82,10 +82,8 @@ export function Carousel({ qna, ...props }: CarouselProps) {
           transform: `translate(${transitionAmount}rem, 0rem)`,
         }}
       >
-        {carouselItems.map(({ question, answer }) => {
-          return (
-            <CarouselCard key={question} question={question} answer={answer} />
-          );
+        {carouselItems.map((item: any) => {
+          return <CarouselCard key={item.id} question={item.question} answer={item.answer.markdown} />;
         })}
       </div>
     </div>

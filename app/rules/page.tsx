@@ -54,7 +54,7 @@ export default async function Rules() {
           Rules & Regulations
         </h1>
 
-        <div id="accordionExample">
+        <div id="accordionExample" className="w-full" data-accordion="collapse">
           {rules.map((item: any) => (
             <div key={item.id} className="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
               <h2 className="mb-0" id={item.title}>
@@ -62,6 +62,7 @@ export default async function Rules() {
                   className="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
                   type="button"
                   data-te-collapse-init
+                  data-te-collapse-collapsed={item.id !== "clffimkzr5t0c0bzwi2hestq9"}
                   data-te-target={"#" + item.id}
                   aria-expanded={item.id === "clffimkzr5t0c0bzwi2hestq9" ? "true" : "false"}
                   aria-controls={item.id}>
@@ -85,9 +86,9 @@ export default async function Rules() {
               </h2>
               <div
                 id={item.id}
-                className={"!visible font-rajdhani " + item.id === "clffimkzr5t0c0bzwi2hestq9" ? " " : "hidden"}
+                className={"!visible font-rajdhani " + item.id === "clffimkzr5t0c0bzwi2hestq9" ? "" : "hidden"}
                 data-te-collapse-item
-                data-te-collapse-show
+                data-te-collapse-show={item.id === "clffimkzr5t0c0bzwi2hestq9"}
                 aria-labelledby={item.title}
                 data-te-parent="#accordionExample">
                 {/* @ts-expect-error Server Component */}
@@ -95,9 +96,9 @@ export default async function Rules() {
               </div>
             </div>
           ))}
-
         </div>
-      </section>
-    </div>
+
+      </section >
+    </div >
   );
 }

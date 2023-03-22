@@ -18,7 +18,7 @@ export function CarouselCard({ question, answer, ...props }: CarouselCardProps) 
 			onMouseLeave={() => {
 				setText(question);
 			}}
-			className={`flex justify-center bg-opacity-25 hover:bg-opacity-40 bg-white w-72 h-48 rounded-2xl pt-4 transition-all`}>
+			className={`flex justify-center bg-opacity-25 hover:bg-opacity-40 bg-white w-72 h-72 rounded-2xl pt-4 transition-all overflow-scroll`}>
 			<ReactMarkdown remarkPlugins={[remarkGfm]} className="p-2 text-white">
 				{text}
 			</ReactMarkdown>

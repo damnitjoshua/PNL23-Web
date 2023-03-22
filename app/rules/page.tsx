@@ -82,13 +82,8 @@ export default function Rules() {
 
 				<Accordion.Root className="w-full rounded-md shadow-[0_2px_10px] shadow-black/5 z-10" type="single" collapsible>
 					{rules.map((item: any) => (
-						<Accordion.Item
-              value={item.id}
-              key={item.id}
-							className="w-full border">
-							<Accordion.Trigger className="w-full p-3">
-								{item.title}
-							</Accordion.Trigger>
+						<Accordion.Item value={item.id} key={item.id} className="w-full border backdrop-blur-md bg-black/30">
+							<Accordion.Trigger className="w-full p-3">{item.title}</Accordion.Trigger>
 							<Accordion.Content className="w-full p-3">
 								<ReactMarkdown remarkPlugins={[remarkGfm]}>{item.content.markdown}</ReactMarkdown>
 								{/* {item.content.text} */}

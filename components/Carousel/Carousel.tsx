@@ -58,7 +58,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
               setIsTicking(true);
             }
           }}
-          className="absolute flex items-center justify-center w-12 h-48 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white opacity-10 hover:opacity-25"
+          className="absolute flex items-center justify-center w-12 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white h-72 opacity-10 hover:opacity-25"
         >
           &lt;
         </button>
@@ -70,7 +70,7 @@ export function Carousel({ qna, ...props }: CarouselProps) {
               setIsTicking(true);
             }
           }}
-          className="absolute right-0 flex items-center justify-center w-12 h-48 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white opacity-10 hover:opacity-25"
+          className="absolute right-0 flex items-center justify-center w-12 font-mono text-3xl font-bold text-center text-gray-600 transition-opacity bg-white h-72 opacity-10 hover:opacity-25"
         >
           &gt;
         </button>

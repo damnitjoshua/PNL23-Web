@@ -68,7 +68,7 @@ export default function Rules() {
 				<h1 className="relative left-[-5.3em] hidden -rotate-90 text-[20px] md:block lg:text-[50px]">Rules & Regulations</h1>
 			</header>
 			<section className="mx-[3em] mt-10 flex h-fit min-h-[100vh] flex-col lg:mx-[8em]">
-				<div className="absolute left-0 w-full h-full top-10 -z-10 min-h-fit">
+				<div className="fixed left-0 w-full h-full top-10 -z-10 min-h-fit">
 					<Image
 						src={MainBg}
 						alt={"background"}

@@ -10,30 +10,7 @@ import AccordionRadix from "../../components/AccordionRadix";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-// async function getRules() {
-// 	const hygraph: any = new GraphQLClient("https://ap-northeast-1.cdn.hygraph.com/content/clffi6gru1r7f01te7njwb2fz/master");
-
-// 	const { rules } = await hygraph.request(
-// 		`
-//       {
-//         rules {
-//           id
-//           title
-//           updatedAt
-//           content {
-//             markdown
-//             html
-//           }
-//         }
-//       }
-//     `
-// 	);
-
-// 	return rules;
-// }
-
 export default function Rules() {
-	// const rules: any = await getRules();
 	const [rules, setRules] = useState([]);
 
 	useEffect(() => {
@@ -43,7 +20,7 @@ export default function Rules() {
 			const { rules } = await hygraph.request(
 				`
         {
-          rules {
+          rules(first: 50) {
             id
             title
             updatedAt
@@ -54,7 +31,7 @@ export default function Rules() {
             }
           }
         }
-	    `
+	      `
 			);
 
 			setRules(rules);
@@ -80,7 +57,7 @@ export default function Rules() {
 				</div>
 				<h1 className=" mb-10 block text-center text-[30px] md:hidden">Rules & Regulations</h1>
 
-				<Accordion.Root className="w-full rounded-md shadow-[0_2px_10px] shadow-black/5 z-10" type="single" collapsible>
+				<Accordion.Root className="w-full rounded-md shadow-[0_2px_10px] shadow-black/5 z-10" type="multiple">
 					{rules.map((item: any) => (
 						<Accordion.Item value={item.id} key={item.id} className="w-full border backdrop-blur-md bg-black/30">
 							<Accordion.Trigger className="w-full p-3">{item.title}</Accordion.Trigger>

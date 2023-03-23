@@ -51,10 +51,10 @@ export default function Overview() {
 				<div className="fixed bottom-0 z-0 w-full p-4 text-2xl md:px-20 backdrop-blur-md bg-black/30">Overview</div>
 				<div className="w-full h-screen pt-10 bg-black/30">
 					<div className="p-4 md:px-20">
-						<div className="flex flex-col items-end justify-end gap-4 pt-4 text-sm text-justify md:text-base">
+						<div className="flex flex-col items-start justify-end gap-6 pt-4 text-sm text-justify sm:items-end sm:gap-10 md:text-base">
 							{contents.map((items: contentProps, key: number) => (
-								<div className="w-full md:w-2/3" key={key}>
-									<h2 className="text-lg">{items.title}</h2>
+								<div className="w-2/3 pl-3 border-l-4 border-white md:w-2/3" key={key}>
+									<h2 className="text-base sm:text-lg">{items.title}</h2>
 									<p className="text-xs text-white/80">{items.paragraph}</p>
 								</div>
 							))}

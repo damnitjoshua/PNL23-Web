@@ -34,10 +34,10 @@ export default function Rules() {
         `
 			);
 
-			setRules(rules);
-		}
+      setRules(rules);
+    }
 		getRules();
-	}, [rules]);
+	}, []);
 
 	return (
 		<div className="py-[3em] font-aquire">

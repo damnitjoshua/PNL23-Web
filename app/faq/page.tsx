@@ -26,9 +26,7 @@ async function getQnas() {
 }
 
 export default async function Page() {
-	const qnas: any = await getQnas();
-
-	console.log(qnas.length);
+  const qnas: any = await getQnas();
 
 	return (
 		<div className="w-screen h-screen pt-16 bg-black">

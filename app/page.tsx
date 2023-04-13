@@ -9,6 +9,7 @@ import TCImage from "../public/images/TECHCLUB.png";
 import PEKOMImage from "../public/images/PEKOM.png";
 import MUMTECImage from "../public/images/MUMTEC.png";
 import APACImage from "../public/images/APAC.png";
+import CSSTARImage from "../public/images/CSSTAR.png";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -100,10 +101,10 @@ export default function Home() {
 			{/* media collab  */}
 			<section>
 				<h1 className="pb-10 text-2xl text-center md:text-3xl">MEDIA COLLABORATORS</h1>
-				<div className="flex flex-row flex-wrap items-center justify-center gap-10 backdrop-blur-md bg-white/80 w-[82%] mx-auto rounded p-10">
+				<div className="flex flex-row flex-wrap items-center justify-center gap-10">
 					<Image src={TCImage} alt={"XTECH"} className="w-[5em]" />
-					<Image src={PEKOMImage} alt={"PEKOM"} className="w-[10em]" />
-					<Image src={MUMTECImage} alt={"MUMTEC"} className="w-[10em]" />
+					<Image src={CSSTARImage} alt={"CSS TAR"} className="w-[10em]" />
+					<Image src={MUMTECImage} alt={"MUMTEC"} className="w-[10em] bg-white p-2" />
 					<Image src={APACImage} alt={"APAC"} className="w-[10em]" />
 				</div>
 			</section>

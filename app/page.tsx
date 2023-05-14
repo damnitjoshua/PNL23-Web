@@ -89,7 +89,7 @@ export default function Home() {
 							teams in becoming the best among the field!
 							<br />
 							<br />
-							As the committee members of Programming League National 2022, we aim to expose university students to competitive
+							As the committee members of Programming League National 2023, we aim to expose university students to competitive
 							programming and discover potential problem solvers to support the industry's growth as well as building a
 							substantial technology ecosystem.
 						</p>

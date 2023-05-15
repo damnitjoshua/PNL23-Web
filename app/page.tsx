@@ -99,7 +99,7 @@ export default function Home() {
 			{/* sponsors  */}
 
 			{/* media collab  */}
-			<section>
+			<section className="px-2">
 				<h1 className="pb-10 text-2xl text-center md:text-3xl">MEDIA COLLABORATORS</h1>
 				<div className="flex flex-row flex-wrap items-center justify-center gap-10">
 					<Image src={TCImage} alt={"XTECH"} className="w-[5em]" />
